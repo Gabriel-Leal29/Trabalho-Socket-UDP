@@ -18,9 +18,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
-// Pasta central. Nome duplicado: o servidor renomeia ("foto (1).jpg"), assim nenhum upload apaga
-// o arquivo de outra pessoa. O nome fica reservado durante o upload e os bytes ficam em
-// .uploads_parciais até o hash ser conferido, então a lista nunca mostra arquivo pela metade.
 public class RepositorioArquivos {
 
     public record Lista(int versao, List<InfoArquivo> arquivos) {

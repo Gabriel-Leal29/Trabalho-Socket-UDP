@@ -11,8 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 import static miniservidor.comum.Protocolo.*;
 
-// Recebe um upload: UPLOAD -> ACK com o nome final -> DATA e ACK de cada fragmento.
-// Quando todos chegam, confere o SHA-256, move para a pasta central e avisa todos com UPDATE_LIST.
 class SessaoUpload extends Sessao {
 
     private enum Estado { RECEBENDO, CONCLUIDO, FALHOU }
