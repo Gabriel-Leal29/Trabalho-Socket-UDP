@@ -19,13 +19,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static miniservidor.comum.Protocolo.*;
-
-// Threads do servidor:
-// - despachante: a única que lê o socket. Responde REGISTER, LIST, PING e BYE e entrega
-//   DATA, ACK e ERROR para a sessão da transferência certa;
-// - uma thread por upload/download (SessaoUpload e SessaoDownload);
-// - um pool que manda o UPDATE_LIST para cada cliente e espera o ACK;
-// - monitor: remove clientes que pararam de mandar PING e confere se a pasta central mudou.
 public class ServidorUdp {
 
     private final int porta;

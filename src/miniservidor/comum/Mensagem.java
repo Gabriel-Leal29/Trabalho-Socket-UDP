@@ -12,12 +12,6 @@ import java.util.List;
 
 import static miniservidor.comum.Protocolo.*;
 
-/*
- * Formato dos datagramas: tipo (1 byte) + id (4 bytes) + campos do comando (ver paraBytes).
- * Números em big-endian e textos com writeUTF (2 bytes de tamanho + UTF-8).
- * Em UPLOAD e DOWNLOAD o id do pedido vira o id da transferência, usado depois nos DATA e ACK.
- * O ACK leva o tipo que está confirmando, para um ACK de DATA não ser confundido com outro de mesmo id.
- */
 public final class Mensagem {
 
     public static final int TAMANHO_CABECALHO = 5;

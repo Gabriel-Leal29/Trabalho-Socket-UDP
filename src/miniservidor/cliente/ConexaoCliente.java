@@ -20,10 +20,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static miniservidor.comum.Protocolo.*;
 
-// UDP não tem conexão, então ela é simulada: REGISTER no início e PING a cada 1 s. Se o servidor
-// ficar 6 s sem responder, o estado vira "conexão perdida"; quando ele volta (ou responde ERROR 401
-// porque reiniciou), o cliente se registra de novo.
-// A thread receptora lê o socket e entrega cada datagrama na fila de quem espera aquele id.
 public class ConexaoCliente {
 
     public enum Estado { DESCONECTADO, CONECTADO, CONEXAO_PERDIDA }

@@ -56,8 +56,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.prefs.Preferences;
 
-// Nada de rede roda na thread do Swing (EDT): conectar, upload e download rodam em threads próprias
-// e só voltam para a EDT com SwingUtilities.invokeLater para atualizar a tela. Assim a janela não trava.
 public class JanelaCliente extends JFrame implements ConexaoCliente.Ouvinte {
 
     private enum Tipo { INFO, SUCESSO, AVISO, ERRO }

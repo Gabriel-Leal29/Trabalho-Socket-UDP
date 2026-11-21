@@ -9,10 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 import static miniservidor.comum.Protocolo.*;
 
-// Envio confiável de um arquivo (upload no cliente, download no servidor).
-// Janela deslizante com repetição seletiva: até JANELA fragmentos sem ACK, cada um com o seu
-// timeout. Só o fragmento perdido é reenviado, por timeout ou pela retransmissão rápida.
-// Os ACKs chegam pela fila, que é preenchida pela thread que lê o socket.
 public class EmissorJanela {
 
     public interface Ouvinte {

@@ -8,10 +8,6 @@ import java.util.BitSet;
 
 import static miniservidor.comum.Protocolo.TAMANHO_FRAGMENTO;
 
-// Recebe os fragmentos e monta o arquivo (upload no servidor, download no cliente).
-// Cada fragmento é gravado na posição nº x 1400, então a ordem de chegada não importa.
-// O BitSet marca o que já chegou: o duplicado não é gravado de novo, mas quem chama reenvia o ACK,
-// porque o ACK anterior pode ter se perdido. No fim o SHA-256 é comparado com o anunciado.
 public class ReceptorArquivo implements Closeable {
 
     public enum Resultado { NOVO, FORA_DE_ORDEM, DUPLICADO, INVALIDO }
